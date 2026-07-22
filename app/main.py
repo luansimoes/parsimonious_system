@@ -5,7 +5,7 @@ from app.encoder import CompositionEncoder
 from scamp._soundfont_host import get_soundfont_presets
 from edopi import Scale
 
-from app.interface import PSGInterface, TkInterface
+from app.interface import TkInterface #, PSGInterface
 
 import json
 
@@ -83,7 +83,7 @@ def generate(interface):
     global composition
 
     valid = interface.validate_fields()
-    print(valid)
+    #print(valid)
 
     if valid:
         interface.set_state_to_generating()

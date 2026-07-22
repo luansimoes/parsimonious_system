@@ -1,3 +1,4 @@
-scamp
+scamp==0.10.0
+sf2utils
 ttkthemes
 edopi==1.1.0

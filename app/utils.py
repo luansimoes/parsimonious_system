@@ -18,16 +18,16 @@ def play_part(part_dict):
     events = part_dict['events']
     for pitch, dur in events:
         if pitch=='R':
-            wait(dur)
+            wait(float(dur))
         else:
-            part_dict['inst'].play_chord(pitch, 1, dur)
+            part_dict['inst'].play_chord(pitch, 1, float(dur))
 
 def generate_neighbor(node, n, k, l, weights):
 
     bag = list(range(k))
     fixed_indices = []
 
-    # TODO: usar probabilidades para decidir quem sai da tupla tbm
+    # TODO: usar probabilidades para decidir quem sai da tupla
     for _ in range(l):
         fixed_indices.append( bag.pop(rd.randint(0, len(bag)-1)) )
 
@@ -56,7 +56,7 @@ def generate_sequence(n, k, l, measures, weights=None):
 
     bag = list(range(1,n+1))
 
-    print(bag, weights)
+    #print(bag, weights)
     cur_node = tuple(rd.choices(bag, weights, k = k))
     sequence = [cur_node]
 
